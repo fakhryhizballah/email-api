@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <title>Email Refral code</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    body {
+        font-family: 'Nunito';
+        font-size: 22px;
+    }
+
+    img {
+        width: 350px;
+        height: auto;
+        margin-top: 1rem;
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* width: 50%; */
+    }
+
+    .container {
+        position: relative;
+    }
+
+    h2 {
+        line-height: 25px;
+        font-weight: 500px;
+        font-family: 'Nunito';
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 22px;
+        margin: 0;
+        line-height: 24px;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 500;
+        color: rgb(10, 10, 10);
+        text-align: justify;
+        padding-bottom: 3%;
+    }
+
+    /* Styling untuk banner */
+    .banner {
+        display: flex;
+        align-items: center;
+        background-color: #007BFF;
+        color: #ffffff;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .logo img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+        margin: 25px;
+    }
+
+    .text {
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
+        margin-left: 25px;
+    }
+
+    /* Styling untuk footer */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .footer-text {
+        font-size: 14px;
+        color: #777777;
+    }
+
+    /* Styling untuk tabel */
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <th>
+                <table>
+                    <tr>
+                        <th>
+                            <div class="banner">
+                                <div class="logo">
+                                    <img src="https://api.rsudaa.singkawangkota.go.id/api/cdn/image/1681629602269-Lambang_KotaSingkawang.webp"
+                                        alt="Logo RSUD">
+                                </div>
+                                <div class="text">
+                                    RSUD dr. Abdul Aziz<br>
+                                    Kota Singkawang
+                                </div>
+                            </div>
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h2>
+                                {{judul}}
+                                <br>
+                            </h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>
+                                Hi {{fullname}},
+                            </p>
+                            <p>
+                                {{pesan}}
+                                <br>
+                            </p>
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>
+                                Thanks and best regards <br></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="footer">
+                                <p class="footer-text">&copy; 2023 RSUD DR. ABDUL AZIZ. All rights reserved.</p>
+                                <p class="footer-text">Alamat: Jl. Dr. Sutomo No.28, Pasiran, Kec. Singkawang Bar |
+                                    Telepon: +62 882-0199-89788 | Email: rsudaa@singkawangkota.go.id</p>
+                                <p class="footer-text"><a href="https://rsudaa.singkawangkota.go.id/">Kebijakan
+                                        Privasi</a> | <a href="https://cctv.rsudaa.singkawangkota.go.id/daily">Berhenti
+                                        Langganan</a></p>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </table>
+</body>
+
+</html>

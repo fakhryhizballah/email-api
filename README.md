@@ -48,7 +48,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 1. Send Email
 
 - Method: POST
-- Endpoint: /email/send
+- Endpoint: /api/email/send
 - Body: 
     ```json
     {
@@ -57,7 +57,8 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
         "template": "template_email",
         "data": {
             "nama": "nama_penerima",
-            "pesan": "pesan_email"
+            "subject": "subject",
+            "pesan": "pesan"
         }
     }
     ```
@@ -77,7 +78,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 2. Send Email with Attachment
 
 - Method: POST
-- Endpoint: /email/send-attachment
+- Endpoint: /api/email/send-attachment
 - Body: 
     ```json
     {
@@ -107,7 +108,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 3. Send Email with Multiple Attachment
 
 - Method: POST
-- Endpoint: /email/send-multiple-attachment
+- Endpoint: /api/email/send-multiple-attachment
 - Body: 
     ```json
     {
@@ -141,7 +142,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 4. Send Email with CC
 
 - Method: POST
-- Endpoint: /email/send-cc
+- Endpoint: /api/email/send-cc
 - Body: 
     ```json
     {
@@ -171,7 +172,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 5. Send Email with BCC
 
 - Method: POST
-- Endpoint: /email/send-bcc
+- Endpoint: /api/email/send-bcc
 - Body: 
     ```json
     {
@@ -201,7 +202,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 6. Send Email with CC and BCC
 
 - Method: POST
-- Endpoint: /email/send-cc-bcc
+- Endpoint: /api/email/send-cc-bcc
 - Body: 
     ```json
     {
@@ -232,7 +233,7 @@ Untuk menggunakan API ini, ikuti langkah-langkah berikut:
 ### 7. Send Email with CC and Attachment
 
 - Method: POST
-- Endpoint: /email/send-cc-attachment
+- Endpoint: /api/email/send-cc-attachment
 - Body: 
     ```json
     {
