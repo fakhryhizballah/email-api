@@ -7,7 +7,7 @@ const base = require('../controllers');
 const middleware = require('../middlewares');
 
 
-routes.get('/email/send', base.sendEmail);
+routes.post('/email/send', base.sendEmail);
 
 
 module.exports = routes;

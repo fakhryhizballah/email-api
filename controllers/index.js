@@ -6,11 +6,15 @@ const fs = require('fs');
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
-    secure: true,
+    secure: false,
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
     },
+    tls: {
+        rejectUnauthorized: true,
+        minVersion: "TLSv1.2"
+    }
 });
 
 async function templateDir(template) {
@@ -27,16 +31,19 @@ async function templateDir(template) {
 module.exports = {
     sendEmail: async (req, res) => {
         try {
-            const { to, subject, template, data } = req.body;
+            const { to, from, subject, template, data } = req.body;
             const html = await templateDir(template);
             const output = mustache.render(html, data);
             const mailOptions = {
-                from: process.env.SMTP_USER,
+                from: '"RSUD dr. Abdul Aziz" <rsudaa@singkawangkota.go.id>',
                 to: to,
                 subject: subject,
                 html: output,
             };
+            console.log(req.body);
             transporter.sendMail(mailOptions, (err, info) => {
+                console.log(err);
+                console.log(info);
                 if (err) {
                     return res.status(400).json({
                         status: "error",
@@ -49,8 +56,12 @@ module.exports = {
                     message: "Email successfully sent",
                     data: info
                 });
-            }
-            );
+            });
+            // return res.status(200).json({
+            //     status: "success",
+            //     message: "Email successfully sent",
+            //     data: mailOptions
+            // });
 
         }
         catch (err) {
