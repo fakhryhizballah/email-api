@@ -3,9 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
-
+const morgantyp = process.env.MORGAN_TYPE || 'dev';
 app.use(express.json());
-app.use(morgan('dev'));
+app.use(morgan(morgantyp));
 
 const routes = require('./routes');
 app.use('/api', routes);
