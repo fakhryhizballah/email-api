@@ -12,8 +12,8 @@ const transporter = nodemailer.createTransport({
         pass: process.env.SMTP_PASS,
     },
     tls: {
-        rejectUnauthorized: true,
-        minVersion: "TLSv1.2"
+        rejectUnauthorized: false,
+        // minVersion: "TLSv1.2"
     }
 });
 
@@ -35,7 +35,8 @@ module.exports = {
             const html = await templateDir(template);
             const output = mustache.render(html, data);
             const mailOptions = {
-                from: '"RSUD dr. Abdul Aziz" <rsudaa@singkawangkota.go.id>',
+                from: process.env.SMTP_FROM,
+                // from: '"RSUD dr. Abdul Aziz" <rsudaa@singkawangkota.go.id>',
                 to: to,
                 subject: subject,
                 html: output,
